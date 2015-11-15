@@ -327,18 +327,18 @@ function WildStarInstantMessenger:VerifyReplacement(channelChecking, tInput, wnd
 end
 
 function WildStarInstantMessenger:OnItemLink(itemLinked)
-	if not self.bHasStockChat then
-		return
-	end
-	Apollo.RemoveEventHandler("ItemLink", Apollo.GetAddon("ChatLog"))
-	local currInput = self:GetCurrentInput(self)
+	--if not self.bHasStockChat then
+	--	return
+	--end
+	--if self.bHasStockChat then Apollo.RemoveEventHandler("ItemLink", Apollo.GetAddon("ChatLog")) end
+	local currInput, currName = self:GetCurrentInput(self)
 	if currInput then
 		tLink = {}
 		tLink.uItem = itemLinked
 		tLink.strText = String_GetWeaselString(Apollo.GetString("CRB_Brackets"), itemLinked:GetName())
 		WildStarInstantMessenger:AppendLink(currInput , tLink)
 	else
-		Apollo.GetAddon("ChatLog"):OnItemLink(itemLinked)
+	--	Apollo.GetAddon("ChatLog"):OnItemLink(itemLinked)
 	end
 end
 
@@ -389,15 +389,16 @@ function WildStarInstantMessenger:AppendLink(wndEdit, tLink)
 end
 
 function WildStarInstantMessenger:GetCurrentInput(self)
-	local input
+	local input, inputname
 	for strName, wndCurrent in pairs(self.wndWhispers or {}) do
 		if wndCurrent:FindChild("EditBox1"):GetData() and wndCurrent:IsVisible() then
 			input = wndCurrent:FindChild("EditBox1")
+			inputname = strName
 			break
 		end
 	end
 	
-	return input
+	return input, inputname
 end
 
 
@@ -1104,7 +1105,7 @@ function WildStarInstantMessenger:OnInputReturn( wndHandler, wndControl, strText
 		local strName = tChatData.strSender
 		local strToText = self:ReplaceLinks(strText, wndControl:GetAllLinks())
 		
-		local tInput = ChatSystemLib.SplitInput(strText)
+		local tInput = ChatSystemLib.SplitInput(strToText)
 		
 		wndControl:SetText("")
 		
