@@ -28,6 +28,7 @@ local VERSION = 1.23
 -- e.g. local kiExampleVariableMax = 999
  
 local ktEmoticons = {
+--[[
 	[":D"] = "WildStarInstantMessenger:VeryHappy",
 	["-_-"] = "WildStarInstantMessenger:Bored",
 	[":'("] = "WildStarInstantMessenger:Crying",
@@ -44,6 +45,7 @@ local ktEmoticons = {
 	["XD"] = "WildStarInstantMessenger:Tired",
 	["X_X"] = "WildStarInstantMessenger:Tired",
 	[";)"] = "WildStarInstantMessenger:Wink",
+]]
 }
 
 local karEvalColors =
