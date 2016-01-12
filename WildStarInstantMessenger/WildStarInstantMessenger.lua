@@ -28,7 +28,6 @@ local VERSION = 1.23
 -- e.g. local kiExampleVariableMax = 999
  
 local ktEmoticons = {
---[[
 	[":D"] = "WildStarInstantMessenger:VeryHappy",
 	["-_-"] = "WildStarInstantMessenger:Bored",
 	[":'("] = "WildStarInstantMessenger:Crying",
@@ -45,7 +44,6 @@ local ktEmoticons = {
 	["XD"] = "WildStarInstantMessenger:Tired",
 	["X_X"] = "WildStarInstantMessenger:Tired",
 	[";)"] = "WildStarInstantMessenger:Wink",
-]]
 }
 
 local karEvalColors =
@@ -896,7 +894,7 @@ function WildStarInstantMessenger:AddToChatLog(self, strSender, saveText, strDat
 			end
 		end
 	end
-	
+	if type(self.db.char.tChatLog[strSender][strDate]) ~= "Table" then self.db.char.tChatLog[strSender][strDate] = {} end
 	table.insert(self.db.char.tChatLog[strSender][strDate], saveText)
 	
 	--This comes to a max of 25 per a date with a max of 5 dates per a person (125 total lines) :/
