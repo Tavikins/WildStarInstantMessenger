@@ -56,7 +56,7 @@ ktADefaults = {
 				[ChatSystemLib.ChatChannel_Instance] 		= ApolloColor.new("ChatParty"),
 				[ChatSystemLib.ChatChannel_WarParty] 		= ApolloColor.new("ChatWarParty"),
 				--[ChatSystemLib.ChatChannel_WarPartyOfficer] = "WarPartyOfficer",
-				[ChatSystemLib.ChatChannel_Advice] 			= ApolloColor.new("ChatAdvice"),
+				[ChatSystemLib.ChatChannel_Nexus] 			= ApolloColor.new("ChatNexus"),
 				[ChatSystemLib.ChatChannel_AccountWhisper]	= ApolloColor.new("ChatAccountWisper"),
 				[40] 										= "ff474747",
 			},
@@ -74,7 +74,7 @@ ktADefaults = {
 				[ChatSystemLib.ChatChannel_Instance] 		= ApolloColor.new("ChatParty"),
 				[ChatSystemLib.ChatChannel_WarParty] 		= ApolloColor.new("ChatWarParty"),
 				--[ChatSystemLib.ChatChannel_WarPartyOfficer] = "WarPartyOfficer",
-				[ChatSystemLib.ChatChannel_Advice] 			= ApolloColor.new("ChatAdvice"),
+				[ChatSystemLib.ChatChannel_Nexus] 			= ApolloColor.new("ChatNexus"),
 				[ChatSystemLib.ChatChannel_AccountWhisper]	= ApolloColor.new("ChatAccountWisper"),
 				[40] 										= "ff474747",
 			},
@@ -351,7 +351,7 @@ end
 
 function WildStarInstantMessenger:OnShowAdviceChatClick( wndHandler, wndControl, eMouseButton )
 	if Apollo.IsShiftKeyDown() then
-		local nChannelType = ChatSystemLib.ChatChannel_Advice
+		local nChannelType = ChatSystemLib.ChatChannel_Nexus
 		local strChannelName
 		local channelCurrent
 		for id, channel in pairs(ChatSystemLib.GetChannels()) do
