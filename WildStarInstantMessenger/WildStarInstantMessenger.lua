@@ -169,7 +169,7 @@ function WildStarInstantMessenger:OnDocLoaded()
 			[ChatSystemLib.ChatChannel_Instance] 		= ApolloColor.new("ChatParty"),
 			[ChatSystemLib.ChatChannel_WarParty] 		= ApolloColor.new("ChatWarParty"),
 			[ChatSystemLib.ChatChannel_WarPartyOfficer] = ApolloColor.new("ChatWarPartyOfficer"),
-			[ChatSystemLib.ChatChannel_Advice] 			= ApolloColor.new("ChatAdvice"),
+			[ChatSystemLib.ChatChannel_Nexus] 			= ApolloColor.new("ChatNexus"),
 			[ChatSystemLib.ChatChannel_AccountWhisper]	= ApolloColor.new("ChatAccountWisper"),
 		}
 		
@@ -187,7 +187,7 @@ function WildStarInstantMessenger:OnDocLoaded()
 			[ChatSystemLib.ChatChannel_Instance] 		= "Instance",
 			[ChatSystemLib.ChatChannel_WarParty] 		= "WarParty",
 			--[ChatSystemLib.ChatChannel_WarPartyOfficer] = "WarPartyOfficer",
-			[ChatSystemLib.ChatChannel_Advice] 			= "Advice",
+			[ChatSystemLib.ChatChannel_Nexus] 			= "Nexus",
 			[ChatSystemLib.ChatChannel_AccountWhisper]	= "Account Whisper",
 			--Custom
 			[40] 			= "Chat History",
@@ -527,7 +527,7 @@ function WildStarInstantMessenger:OnChatMessage(channelCurrent, tMessage)
 		
 			if eType == ChatSystemLib.ChatChannel_Zone and self.db.profile.chatChannels.bShowZoneChat then
 		elseif eType == ChatSystemLib.ChatChannel_Guild and self.db.profile.chatChannels.bShowGuildChat then
-		elseif eType == ChatSystemLib.ChatChannel_Advice and self.db.profile.chatChannels.bShowAdviceChat then
+		elseif eType == ChatSystemLib.ChatChannel_Nexus and self.db.profile.chatChannels.bShowAdviceChat then
 		elseif eType == ChatSystemLib.ChatChannel_Party and self.db.profile.chatChannels.bShowPartyChat then
 		elseif eType == ChatSystemLib.ChatChannel_WarParty and self.db.profile.chatChannels.bShowWarPartyChat then
 		elseif eType == ChatSystemLib.ChatChannel_Instance and self.db.profile.chatChannels.bShowInstanceChat then
